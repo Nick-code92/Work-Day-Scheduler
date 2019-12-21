@@ -20,3 +20,23 @@
 
 //THEN events are saved in the timeblock for that hour
 
+$(document).ready(function(){
+    // console.log("jQurey")
+    function currentDay(){
+        $("#currentDay").text(moment())
+
+     var now = moment().format("HH:mm")
+     if (){
+       var   
+     }
+
+    }
+    setInterval(currentDay, 1000)
+    $(".btn").on("click", function(e){
+       e.preventDefault();
+       var btn = $(this).val();
+       var text = $(btn).val();
+
+    //    console.log(text)
+    });
+});
