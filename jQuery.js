@@ -23,12 +23,9 @@
 $(document).ready(function(){
     // console.log("jQurey")
     function currentDay(){
-        $("#currentDay").text(moment())
+        $("#currentDay").text(moment());
 
-     var now = moment().format("HH:mm")
-     if (){
-       var   
-     }
+     var now = moment().format("HH:mm");
 
     }
     setInterval(currentDay, 1000)
@@ -36,7 +33,8 @@ $(document).ready(function(){
        e.preventDefault();
        var btn = $(this).val();
        var text = $(btn).val();
+       if (this) {
+       }
 
-    //    console.log(text)
     });
 });
