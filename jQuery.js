@@ -21,38 +21,42 @@
 //THEN events are saved in the timeblock for that hour
 
 $(document).ready(function () {
-    // console.log("jQurey")
+    var keys = Object.keys(localStorage);
     function currentDay() {
         $("#currentDay").text(moment());
 
-        var now = moment().format("HH:mm");
-
+        var now = moment().hour();
+        updateColors(now)
     }
     setInterval(currentDay, 1000)
     $(".btn").on("click", function (e) {
         e.preventDefault();
         var btn = $(this).val();
         var text = $(btn).val();
+        localStorage.setItem(btn, text);
     });
-    // var saveBtn = $('.saveBtn');
-    // saveBtn.on('click', function () {
-    //     let eventId = $(this).attr('id');
-    //     let eventText = $(this).parent().siblings().children('.description').val();
-    //     localStorage.setItem(eventId, eventText);
 
-        // function updateColors(){
-        //     var currentTime = new Date().getHours();
-        //     for (var i = 9; i < 18; i++) { 
-        //     console.log(currentTime, $(`#${i}`).data("time"));
-        //      if ($(`#${i}`).data("time") == currentTime){
-        //         $(`#text${i}`).addClass( "present");
-        //     } else if (currentTime < $(`#${i}`).data("time")) {
-        //         $(`#text${i}`).addClass( "future");
+    function updateColors(now) {
+        for (var i = 9; i < 18; i++) {
+            var row = parseInt($(`#${i}`).attr("id"))
+            if (row == now) {
+                $(`#${i}`).addClass("");
+                $(`#${i}`).addClass("present");
+            } else if (row > now) {
+                $(`#${i}`).addClass("");
+                $(`#${i}`).addClass("future");
+            }else {
+                $(`#${i}`).addClass("");
+                $(`#${i}`).addClass("past");
+            }
+        }
+    }
+    function getLocalStorage(keys) {
+        keys.forEach(key => {
+            let value = localStorage.getItem(key);
+            $(key).text(value);
 
-        //  }):
-        // function getLocalStorage(key) {
-        //     let value = localStorage.getItem(key);
-        //     if (value) {
-        //         $(`#text${key}`).text(value);
-        //     });
-    });
+        });
+    }
+    getLocalStorage(keys)
+});
