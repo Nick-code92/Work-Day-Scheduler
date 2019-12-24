@@ -5,9 +5,11 @@ this is a boot camp project on work day scheduler
 * HTML
 * CSS
 * jquery
-### also using a local storage to save the text in time block.
+** also using a local storage to save the text in time block.
+
+[check it out on] (https://nick-code92.github.io/Work-Day-Scheduler/)
 
 ## Author
-*Nikddimos Gebregiorgis 
+* Nikddimos Gebregiorgis 
 
-[Work-Day-Scheduler] https://github.com/Nick-code92
+[Work-Day-Scheduler] (https://github.com/Nick-code92)
