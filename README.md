@@ -17,7 +17,7 @@ this is a boot camp project on work day scheduler
 
 5.  Clicking a time block's "Save" button stores the input text in local storage, allowing the text to persist when the application is refreshed.
 
-### Link 
+### Links 
 [check it out on] (https://nick-code92.github.io/Work-Day-Scheduler/)
 
 #### Author
